@@ -1,0 +1,9 @@
+@import 'navbar';
+@import 'header';
+@import 'shop/shopContainer';
+@import 'shop/detailContainer';
+@import 'shop/cartWidget';
+
+section {
+    height: 200vh;
+}

@@ -1,0 +1,57 @@
+nav:hover {
+    background-color: $color5;
+    a {
+        color:$color4;
+    }
+}
+
+nav {
+    cursor: crosshair;
+    position:sticky; top:0; z-index:1000;
+    width:inherit;height: 15vh;
+    display: flex;
+    align-items: center;
+    border-bottom: solid 0.1vh $color6;
+    background-color: white;
+    transition: background-color 1s;
+    
+    ul {
+        padding: 0;
+        width:100%;
+        margin:0;
+        display: flex;
+        flex-direction: row;
+        list-style-type: none;
+        justify-content: space-around;
+        align-items: center;
+        
+        a:hover {
+            color:$color1;
+        }
+        a {
+            text-decoration: none;
+            font:{
+                family:$subt1;
+                size:4vh;
+            }
+            color:transparent;
+            transition: color 0.5s;
+        }
+
+        a:nth-child(1):hover {
+            opacity:1;
+        } 
+        a:nth-child(1) {
+            opacity:0.5;
+            position: relative; top:-0.8vh;
+            margin-right: 40%;
+            letter-spacing: 1.1vh;
+            font:{
+                family:$titulo;
+                size:8vh;
+            }
+            color:$color3;
+            transition:opacity 1s;
+        }
+    }
+}

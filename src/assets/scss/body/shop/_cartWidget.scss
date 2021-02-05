@@ -1,0 +1,89 @@
+#cartWidget {
+    position: absolute; z-index: 1001; 
+    top:0; left:50%;
+    width:10%; height: 100%;;
+
+
+    .cartDetailContainer {
+        position: absolute; z-index: 2000;
+        top:10vh;
+        left:-80vh;
+        width: 80vw; height: 80vh;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        background-color:white;
+        
+        border:{
+            top:1vh solid $color3;
+            right:1vh solid $color3;
+            left:1vh solid $color7;
+            bottom:1vh solid $color7;
+            radius:1%;
+        }
+        
+        button {
+            cursor:pointer;
+            position: absolute;
+            top:1%;
+            right:1%;
+            border:none;
+            outline-style: none;
+            background-color: transparent;
+            font:{family:$titulo;size:2vw;}
+            color:$color6;
+        }
+
+        .cartDetail {
+            width:90%;
+            height: 95%;
+
+            h2 {
+                text-align: right;
+                font:{family:$titulo;size:3vw}
+                color:$color2;
+                letter-spacing: 0.8vw;
+            }
+
+            .cartContent {
+
+            }
+
+        }
+    }
+
+
+
+
+    .iconContainer {
+        width:inherit;
+        height: inherit;
+        position: absolute;
+
+        .cartIcon:hover {
+            top:20%;
+            opacity:1;
+            path:nth-child(3) {
+                animation:cartIcon 0.8s ease-in-out forwards;
+                transform-origin: 50% 50%;
+            }
+        }
+
+        .cartIcon {
+            cursor: pointer;
+            opacity:0.5;
+            position: absolute;
+            top:-20%;
+            transform: rotate(180deg) scale(3);
+            transition: top 1s,opacity 1s;
+            stroke:$color3;
+            path {transition: stroke 1s}
+            
+        }
+
+        @keyframes cartIcon {
+            100% {transform:rotate(360deg)}
+        }
+    }
+}

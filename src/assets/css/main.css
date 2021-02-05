@@ -1,0 +1,459 @@
+@import url("https://fonts.googleapis.com/css2?family=Permanent+Marker&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@500&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Ubuntu+Mono:wght@400;700&display=swap");
+nav:hover {
+  background-color: #e0e0e0;
+}
+nav:hover a {
+  color: #222831;
+}
+
+nav {
+  cursor: crosshair;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  width: inherit;
+  height: 15vh;
+  display: flex;
+  align-items: center;
+  border-bottom: solid 0.1vh #f05488;
+  background-color: white;
+  transition: background-color 1s;
+}
+nav ul {
+  padding: 0;
+  width: 100%;
+  margin: 0;
+  display: flex;
+  flex-direction: row;
+  list-style-type: none;
+  justify-content: space-around;
+  align-items: center;
+}
+nav ul a:hover {
+  color: #f05454;
+}
+nav ul a {
+  text-decoration: none;
+  font-family: "Poppins", sans-serif;
+  font-size: 4vh;
+  color: transparent;
+  transition: color 0.5s;
+}
+nav ul a:nth-child(1):hover {
+  opacity: 1;
+}
+nav ul a:nth-child(1) {
+  opacity: 0.5;
+  position: relative;
+  top: -0.8vh;
+  margin-right: 40%;
+  letter-spacing: 1.1vh;
+  font-family: "Permanent Marker", cursive;
+  font-size: 8vh;
+  color: #32e978;
+  transition: opacity 1s;
+}
+
+header {
+  height: 90vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #32e978;
+}
+
+.cardItem:hover .cardItem-hover {
+  opacity: 1;
+  background-color: #32e978;
+}
+
+.cardItem {
+  position: relative;
+  width: 22%;
+  height: 23%;
+  margin: 1vh 1vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  border: #32e978 solid 0.5vh;
+  background-color: #e0e0e0;
+}
+.cardItem img {
+  width: 65%;
+  height: 91%;
+}
+.cardItem .cardItem-hover {
+  width: 101%;
+  height: 101%;
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-evenly;
+  opacity: 0;
+  transition: opacity 1s, background-color 0.8s;
+}
+.cardItem .cardItem-hover h4 {
+  margin: 1vh 0;
+  width: 80%;
+  font-family: "Poppins", sans-serif;
+  font-size: 4vh;
+  color: #30475e;
+  text-align: center;
+}
+.cardItem .cardItem-hover p {
+  margin: 0;
+  cursor: default;
+  font-family: "Ubuntu", sans-serif;
+  font-size: 4vh;
+  font-weight: 700;
+  color: white;
+}
+.cardItem .cardItem-hover p:nth-child(3) {
+  color: #d2e430;
+  letter-spacing: -0.1vw;
+  word-spacing: 0.3vw;
+  transition: opacity 1s;
+}
+.cardItem .cardItem-hover button:hover {
+  background-color: #e0e0e0;
+}
+.cardItem .cardItem-hover button:hover a {
+  color: #f05454;
+}
+.cardItem .cardItem-hover button {
+  width: 85%;
+  height: 15%;
+  border: none;
+  outline-style: none;
+  border-radius: 1vh;
+  background-color: #f05488;
+  transition: background-color 1s;
+}
+.cardItem .cardItem-hover button a {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: "Ubuntu", sans-serif;
+  font-size: 3vh;
+  color: #e0e0e0;
+  text-decoration: none;
+  transition: color 1s;
+}
+
+.shopContainer {
+  margin-top: 10vh;
+  width: inherit;
+  display: flex;
+  flex-direction: row;
+}
+.shopContainer .orderContainer {
+  width: 25%;
+}
+.shopContainer .shopItems {
+  height: 180vh;
+  width: 75%;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  justify-content: flex-start;
+  align-content: flex-start;
+}
+
+.modalBuy {
+  position: absolute;
+  left: -1%;
+  top: -1%;
+  width: 95%;
+  height: 90%;
+  padding: 1vh 1.5vw;
+  display: flex;
+  flex-direction: column;
+  background-color: white;
+  border: solid #f05454 0.5vh;
+  border-radius: 2vh;
+  animation: modalAppear 0.2s forwards;
+}
+.modalBuy button:nth-child(1) {
+  cursor: pointer;
+  width: 20%;
+  height: 20%;
+  align-self: flex-end;
+  font-family: "Permanent Marker", cursive;
+  font-size: 1.5vw;
+  color: #e0e0e0;
+  border: none;
+  background-color: #f05454;
+  border-radius: 100%;
+  outline-style: none;
+}
+.modalBuy p {
+  font-family: "Ubuntu", sans-serif;
+  font-size: 1.4vw;
+}
+.modalBuy button:nth-child(3) {
+  cursor: pointer;
+  height: 20%;
+  background-color: #32e978;
+  border: none;
+  border-radius: 1vh;
+  font-family: "Ubuntu", sans-serif;
+  font-size: 1.2vw;
+  font-weight: 700;
+  color: white;
+}
+
+@keyframes modalAppear {
+  0% {
+    transform: scale(0);
+  }
+}
+.detailContainer {
+  width: inherit;
+  height: 90vh;
+  margin-top: 2vh;
+  margin-bottom: 10vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.detailContainer .detail {
+  width: 70%;
+  height: 100%;
+  padding: 0% 10%;
+  display: flex;
+  flex-direction: row;
+  border-top: solid 0.5vh #32e978;
+  border-right: solid 0.5vh #32e978;
+  border-bottom: solid 0.5vh #d2e430;
+  border-left: solid 0.5vh #d2e430;
+}
+.detailContainer .detail .detail_img {
+  width: 40%;
+}
+.detailContainer .detail .detail_img img {
+  height: 100%;
+  width: 80%;
+}
+.detailContainer .detail .detail_body {
+  width: 60%;
+  display: flex;
+  flex-direction: column;
+}
+.detailContainer .detail .detail_body h4 {
+  width: 100%;
+  margin: 0;
+  font-family: "Poppins", sans-serif;
+  font-size: 5.5vw;
+  color: #32e978;
+}
+.detailContainer .detail .detail_body span {
+  margin: 2vh 0;
+  width: 100%;
+  padding: 3vh;
+  padding-right: 9vh;
+  font-family: "Ubuntu", sans-serif;
+  font-size: 1.5vw;
+  font-weight: 400;
+  color: #30475e;
+  background-color: #e0e0e0;
+}
+.detailContainer .detail .detail_body .detail_body-buy {
+  width: 112%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+.detailContainer .detail .detail_body .detail_body-buy ul {
+  width: 65%;
+  margin: 0;
+  padding-left: 0;
+  list-style: none;
+}
+.detailContainer .detail .detail_body .detail_body-buy ul li {
+  margin: 1vh 0;
+  padding: 1vh 0;
+  padding-left: 1vw;
+  display: flex;
+  flex-direction: row;
+  border-left: solid 2vh #f05454;
+  background-color: #30475e;
+}
+.detailContainer .detail .detail_body .detail_body-buy ul li p {
+  margin: 0;
+  font-family: "Poppins", sans-serif;
+  font-size: 1.4vw;
+  color: #e0e0e0;
+  word-spacing: 0.5vw;
+}
+.detailContainer .detail .detail_body .detail_body-buy ul li p:nth-child(2) {
+  margin-left: 2vw;
+  color: #d2e430;
+  font-size: 1.2vw;
+  vertical-align: bottom;
+}
+.detailContainer .detail .detail_body .detail_body-buy .itemBuy {
+  position: relative;
+  width: 30%;
+  padding: 1vh 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+}
+.detailContainer .detail .detail_body .detail_body-buy .itemBuy .itemBuy_buttons {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  border: solid #30475e 0.3vh;
+}
+.detailContainer .detail .detail_body .detail_body-buy .itemBuy .itemBuy_buttons button {
+  cursor: pointer;
+  width: 30%;
+  font-family: "Ubuntu", sans-serif;
+  font-size: 1.5vw;
+  color: #f05488;
+  outline-style: none;
+  border: none;
+  background-color: #30475e;
+}
+.detailContainer .detail .detail_body .detail_body-buy .itemBuy .itemBuy_buttons button:nth-child(3) {
+  color: #32e978;
+}
+.detailContainer .detail .detail_body .detail_body-buy .itemBuy .itemBuy_buttons p.red {
+  color: #f05454;
+}
+.detailContainer .detail .detail_body .detail_body-buy .itemBuy .itemBuy_buttons p {
+  margin: 0;
+  width: 40%;
+  font-family: "Ubuntu", sans-serif;
+  font-size: 1.4vw;
+  text-align: center;
+  color: #30475e;
+}
+.detailContainer .detail .detail_body .detail_body-buy .itemBuy > p {
+  padding: 0.8vh 0.5vw;
+  text-align: center;
+  font-family: "Ubuntu", sans-serif;
+  font-size: 2vw;
+  border-top: 0.8vh double #d2e430;
+  border-bottom: 0.8vh double #d2e430;
+  border-left: 0.1vh solid #d2e430;
+  border-right: 0.1vh solid #d2e430;
+  color: #d2e430;
+  background-color: #30475e;
+}
+.detailContainer .detail .detail_body .detail_body-buy .itemBuy > button:hover {
+  color: #f05488;
+}
+.detailContainer .detail .detail_body .detail_body-buy .itemBuy > button {
+  cursor: pointer;
+  height: 30%;
+  font-family: "Ubuntu", sans-serif;
+  font-size: 1.4vw;
+  font-weight: 700;
+  color: #30475e;
+  outline-style: none;
+  background-color: white;
+  border-top: 0.4vh solid #32e978;
+  border-right: 0.4vh solid #32e978;
+  border-left: 0.4vh solid #d2e430;
+  border-bottom: 0.4vh solid #d2e430;
+  border-radius: 1vh;
+  transition: color 1s, background-color 1s;
+}
+
+#cartWidget {
+  position: absolute;
+  z-index: 1001;
+  top: 0;
+  left: 50%;
+  width: 10%;
+  height: 100%;
+}
+#cartWidget .cartDetailContainer {
+  position: absolute;
+  z-index: 2000;
+  top: 10vh;
+  left: -80vh;
+  width: 80vw;
+  height: 80vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: white;
+  border-top: 1vh solid #32e978;
+  border-right: 1vh solid #32e978;
+  border-left: 1vh solid #d2e430;
+  border-bottom: 1vh solid #d2e430;
+  border-radius: 1%;
+}
+#cartWidget .cartDetailContainer button {
+  cursor: pointer;
+  position: absolute;
+  top: 1%;
+  right: 1%;
+  border: none;
+  outline-style: none;
+  background-color: transparent;
+  font-family: "Permanent Marker", cursive;
+  font-size: 2vw;
+  color: #f05488;
+}
+#cartWidget .cartDetailContainer .cartDetail {
+  width: 90%;
+  height: 95%;
+}
+#cartWidget .cartDetailContainer .cartDetail h2 {
+  text-align: right;
+  font-family: "Permanent Marker", cursive;
+  font-size: 3vw;
+  color: #30475e;
+  letter-spacing: 0.8vw;
+}
+#cartWidget .iconContainer {
+  width: inherit;
+  height: inherit;
+  position: absolute;
+}
+#cartWidget .iconContainer .cartIcon:hover {
+  top: 20%;
+  opacity: 1;
+}
+#cartWidget .iconContainer .cartIcon:hover path:nth-child(3) {
+  animation: cartIcon 0.8s ease-in-out forwards;
+  transform-origin: 50% 50%;
+}
+#cartWidget .iconContainer .cartIcon {
+  cursor: pointer;
+  opacity: 0.5;
+  position: absolute;
+  top: -20%;
+  transform: rotate(180deg) scale(3);
+  transition: top 1s, opacity 1s;
+  stroke: #32e978;
+}
+#cartWidget .iconContainer .cartIcon path {
+  transition: stroke 1s;
+}
+@keyframes cartIcon {
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+section {
+  height: 200vh;
+}
+
+body, html {
+  margin: 0;
+  padding: 0;
+}
+
+/*# sourceMappingURL=main.css.map */

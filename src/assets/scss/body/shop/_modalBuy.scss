@@ -1,0 +1,46 @@
+.modalBuy {
+    position:absolute; left:-1%; top:-1%;
+    width:95%;
+    height: 90%;
+    padding:1vh 1.5vw;
+    display:flex;
+    flex-direction: column;
+
+    background-color: white;
+    border:solid $color1 0.5vh;
+    border-radius: 2vh;
+
+    animation:modalAppear 0.2s forwards;
+
+    button:nth-child(1) {
+        cursor:pointer;
+        width:20%;
+        height: 20%;
+        align-self: flex-end;
+        font:{family:$titulo;size:1.5vw;}
+        color:$color5;
+        border:none;
+        background-color: $color1;
+        border-radius: 100%;
+        outline-style: none;
+    }
+
+    p {
+        font:{family:$subt2;size:1.4vw}
+    }
+
+    button:nth-child(3) {
+        cursor:pointer;
+        height: 20%;
+        background-color: $color3;
+        border:none;
+        border-radius: 1vh;
+        font:{family:$subt2;size:1.2vw;weight:700}
+        color:white;
+    }
+}
+
+@keyframes modalAppear {
+    0% {transform:scale(0)}
+    // 100% {opacity:1}
+}
