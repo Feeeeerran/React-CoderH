@@ -11,7 +11,6 @@ export default function ItemDetail({detail}) {
             <li>
                 <p>{`X${i}:    $${(detail.price*i-((i/6)*0.1)*detail.price*i)}`}</p>
                 <p>{`con ${(i/6)*10}% de descuento !`}</p>
-
             </li>
         ]
     }
@@ -32,7 +31,7 @@ export default function ItemDetail({detail}) {
                         <li><p>X1 ${detail.price} de {detail.cantidad}ml</p></li>
                         {ofertas}
                     </ul>
-                    <ItemBuy priceUn={detail.price} stock={detail.stock}/>
+                    <ItemBuy item={detail}/>
                 </div>
                 
             </div>

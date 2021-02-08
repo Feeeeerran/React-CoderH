@@ -3,12 +3,15 @@ import React,{useState} from 'react'
 import ModalBuy from './modal-buy'
 
 
-export default function ItemBuy({priceUn,stock}) {
+
+export default function ItemBuy({item}) {
     const [mount,setMount]=useState(0);
-    const [confirm,setConfirm]=useState(0)
+    const [confirm,setConfirm]=useState(0);
+    const [total,setTotal] = useState(0);
+
 
     function Sum() {
-        if (mount<stock) {setMount(mount+1);}
+        if (mount<item.stock) {setMount(mount+1);}
     }
 
     function Res() {
@@ -16,7 +19,7 @@ export default function ItemBuy({priceUn,stock}) {
     }
 
     function Disct() {
-        var total=priceUn*mount;
+        var total=item.price*mount;
         if (mount>=6 && mount<12) {
             return Math.floor(total*0.9);
         } else if (mount>=12 && mount<24) {
@@ -29,10 +32,13 @@ export default function ItemBuy({priceUn,stock}) {
     }
 
     function Confirm() {
-        if (confirm==0) {
-            setConfirm(1);
-        } else {
-            setConfirm(0);
+        if (mount!==0) {
+            if (confirm==0) {
+                setConfirm(1);
+                setTotal(Disct());
+            } else {
+                setConfirm(0);
+            }
         }
     }
 
@@ -48,7 +54,7 @@ export default function ItemBuy({priceUn,stock}) {
             <button onClick={Confirm}> Añadir al carrito</button>
             {
                 confirm!=0
-                ? <ModalBuy quitModal={Confirm}/>
+                ? <ModalBuy quitModal={Confirm} item={item} mount={mount} total={total} />
                 :""
             }
             

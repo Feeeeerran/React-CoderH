@@ -41,11 +41,7 @@ nav ul a {
   color: transparent;
   transition: color 0.5s;
 }
-nav ul a:nth-child(1):hover {
-  opacity: 1;
-}
 nav ul a:nth-child(1) {
-  opacity: 0.5;
   position: relative;
   top: -0.8vh;
   margin-right: 40%;
@@ -62,6 +58,132 @@ header {
   justify-content: center;
   align-items: center;
   background-color: #32e978;
+}
+
+section#buyDetail {
+  min-height: 100vh;
+  max-height: 100vh;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+}
+section#buyDetail h4 {
+  margin: 8vh 0;
+  margin-left: 2vw;
+  width: 90%;
+  font-family: "Ubuntu", sans-serif;
+  font-size: 3vw;
+  font-weight: 700;
+  border-bottom: 0.5vh solid #30475e;
+}
+section#buyDetail .buyContainer {
+  align-self: center;
+  width: 95%;
+  height: 90%;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+}
+section#buyDetail .buyContainer .buyList {
+  width: 45%;
+  height: 80%;
+  padding-top: 2vh;
+  display: flex;
+  flex-direction: column;
+  overflow-y: auto;
+}
+section#buyDetail .buyContainer .buyList .buyItem, section#buyDetail .buyContainer .buyList .headerList {
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+}
+section#buyDetail .buyContainer .buyList .buyItem p, section#buyDetail .buyContainer .buyList .headerList p {
+  margin: 2vh 0;
+  width: 25%;
+  font-family: "Poppins", sans-serif;
+  font-size: 1.2vw;
+  text-align: center;
+}
+section#buyDetail .buyContainer .buyList .buyItem p:nth-child(1), section#buyDetail .buyContainer .buyList .headerList p:nth-child(1) {
+  text-align: left;
+}
+section#buyDetail .buyContainer .buyList .headerList {
+  border-bottom: solid 0.2vh #30475e;
+}
+section#buyDetail .buyContainer .buyList .headerList p {
+  margin: 0;
+}
+section#buyDetail .buyContainer .buyList .footerList {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
+  border-top: solid 0.5vh #d2e430;
+}
+section#buyDetail .buyContainer .buyList .footerList p {
+  cursor: crosshair;
+  width: 20%;
+  margin: 0;
+  padding: 1vh 0;
+  font-family: "Ubuntu", sans-serif;
+  font-size: 1.8vw;
+  font-weight: 700;
+  background-color: #d2e430;
+  text-align: center;
+}
+section#buyDetail .buyContainer .buyFormContainer {
+  margin-left: 8vw;
+  width: 40%;
+  height: 75%;
+  display: flex;
+  flex-direction: column;
+  border: solid 0.5vh #32e978;
+  justify-content: space-between;
+}
+section#buyDetail .buyContainer .buyFormContainer h5 {
+  margin: 1vh 0;
+  margin-left: 1vw;
+  margin-bottom: 2vh;
+  font-family: "Poppins", sans-serif;
+  font-size: 1.5vw;
+  color: #30475e;
+}
+section#buyDetail .buyContainer .buyFormContainer form {
+  display: flex;
+  flex-direction: column;
+}
+section#buyDetail .buyContainer .buyFormContainer form label {
+  margin: 3vh 0;
+  margin-left: 1vw;
+  display: flex;
+  justify-content: space-between;
+  font-family: "Ubuntu", sans-serif;
+  font-size: 1.3vw;
+}
+section#buyDetail .buyContainer .buyFormContainer form label input {
+  width: 70%;
+  margin-right: 1vw;
+  font-family: "Ubuntu", sans-serif;
+  font-size: 1.3vw;
+  outline-style: none;
+  border: none;
+  border-bottom: solid 0.2vh #30475e;
+}
+section#buyDetail .buyContainer .buyFormContainer button:hover {
+  color: #30475e;
+}
+section#buyDetail .buyContainer .buyFormContainer button {
+  cursor: pointer;
+  width: 100.5%;
+  height: 10%;
+  outline-style: none;
+  border: none;
+  background-color: #32e978;
+  font-family: "Ubuntu", sans-serif;
+  font-size: 1.5vw;
+  letter-spacing: 0.8vw;
+  color: white;
+  transition: color 1s;
 }
 
 .cardItem:hover .cardItem-hover {
@@ -247,10 +369,10 @@ header {
   flex-direction: column;
 }
 .detailContainer .detail .detail_body h4 {
-  width: 100%;
+  width: 115%;
   margin: 0;
   font-family: "Poppins", sans-serif;
-  font-size: 5.5vw;
+  font-size: 4.8vw;
   color: #32e978;
 }
 .detailContainer .detail .detail_body span {
@@ -369,6 +491,7 @@ header {
 }
 
 #cartWidget {
+  cursor: default;
   position: absolute;
   z-index: 1001;
   top: 0;
@@ -393,7 +516,10 @@ header {
   border-bottom: 1vh solid #d2e430;
   border-radius: 1%;
 }
-#cartWidget .cartDetailContainer button {
+#cartWidget .cartDetailContainer > button:hover {
+  transform: scale(1.2);
+}
+#cartWidget .cartDetailContainer > button {
   cursor: pointer;
   position: absolute;
   top: 1%;
@@ -404,17 +530,119 @@ header {
   font-family: "Permanent Marker", cursive;
   font-size: 2vw;
   color: #f05488;
+  transition: transform 0.5s;
 }
 #cartWidget .cartDetailContainer .cartDetail {
   width: 90%;
   height: 95%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
 }
 #cartWidget .cartDetailContainer .cartDetail h2 {
-  text-align: right;
+  height: 12%;
+  margin: 0;
+  margin-top: 3vh;
   font-family: "Permanent Marker", cursive;
   font-size: 3vw;
   color: #30475e;
   letter-spacing: 0.8vw;
+}
+#cartWidget .cartDetailContainer .cartDetail .finalBuy {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
+  align-items: center;
+}
+#cartWidget .cartDetailContainer .cartDetail .finalBuy p {
+  margin: 0;
+  margin-right: 3vw;
+  width: 25%;
+  font-family: "Poppins", sans-serif;
+  font-size: 2vw;
+  text-align: right;
+  word-spacing: 2vw;
+  color: #30475e;
+  border-top: 0.5vh #d2e430 solid;
+}
+#cartWidget .cartDetailContainer .cartDetail .finalBuy > button:hover {
+  opacity: 1;
+  background-color: #30475e;
+  border-color: #32e978;
+}
+#cartWidget .cartDetailContainer .cartDetail .finalBuy > button:hover a {
+  color: white;
+}
+#cartWidget .cartDetailContainer .cartDetail .finalBuy > button {
+  opacity: 0.5;
+  cursor: pointer;
+  width: 20%;
+  font-family: "Poppins", sans-serif;
+  font-size: 1.4vw;
+  outline-style: none;
+  border: none;
+  border-left: 1vw #30475e solid;
+  background-color: white;
+  transition: opacity 1s, background-color 1s, border-color 1s;
+}
+#cartWidget .cartDetailContainer .cartDetail .finalBuy > button a {
+  text-decoration: none;
+  color: #30475e;
+  transition: color 1s;
+}
+#cartWidget .cartDetailContainer .cartDetail .cartContent {
+  overflow-y: auto;
+  height: 65%;
+}
+#cartWidget .cartDetailContainer .cartDetail .cartContent .cartItem {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  margin-bottom: 1vh;
+  width: inherit;
+  height: 25%;
+  border-left: 1.2vw solid #f05488;
+  border-bottom: 0.5vh solid #f05488;
+}
+#cartWidget .cartDetailContainer .cartDetail .cartContent .cartItem h3 {
+  width: 30%;
+  margin: 0;
+  padding-left: 1vw;
+  padding-top: 1vh;
+  font-family: "Poppins", sans-serif;
+  font-size: 1.8vw;
+  word-spacing: 0.3vw;
+  color: #f05488;
+}
+#cartWidget .cartDetailContainer .cartDetail .cartContent .cartItem p {
+  width: 25%;
+  text-align: center;
+  font-family: "Ubuntu", sans-serif;
+  font-weight: 700;
+  font-size: 2.2vw;
+  color: #30475e;
+}
+#cartWidget .cartDetailContainer .cartDetail .cartContent .cartItem p:nth-child(3) {
+  color: #32e978;
+}
+#cartWidget .cartDetailContainer .cartDetail .cartContent .cartItem button:hover {
+  opacity: 1;
+  color: #f05454;
+}
+#cartWidget .cartDetailContainer .cartDetail .cartContent .cartItem button {
+  cursor: pointer;
+  opacity: 0.4;
+  width: 20%;
+  height: 50%;
+  padding-right: 1vw;
+  border: none;
+  font-family: "Ubuntu", sans-serif;
+  font-size: 1.4vw;
+  background-color: white;
+  text-align: right;
+  transition: color 0.5s, opacity 0.5s;
+  outline-style: none;
 }
 #cartWidget .iconContainer {
   width: inherit;
