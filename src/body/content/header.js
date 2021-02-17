@@ -3,7 +3,7 @@ import React from 'react'
 export default function Header () {
     return (
         <header>
-            Welcome to theStore + alguna img de fondo
+            <h2>Welcome to the birraStore</h2>
         </header>
     )
 }

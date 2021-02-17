@@ -4,5 +4,11 @@ header {
     display: flex;
     justify-content: center;
     align-items: center;
-    background-color: $color3;
+
+    h2 {
+        margin-left: 3vw;
+        font:{family:$subt1;size:10vw;}
+        color:$color2;
+    }
+
 }

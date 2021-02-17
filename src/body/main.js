@@ -28,7 +28,6 @@ export default function Main() {
             <Route exact path="/about"><About/></Route>
             <Route exact path="/contact"><Contact/></Route>
             
-            <Footer/>
         </>
     )
 }

@@ -57,7 +57,42 @@ header {
   display: flex;
   justify-content: center;
   align-items: center;
-  background-color: #32e978;
+}
+header h2 {
+  margin-left: 3vw;
+  font-family: "Poppins", sans-serif;
+  font-size: 10vw;
+  color: #30475e;
+}
+
+section#about {
+  width: 90%;
+  margin-left: 5vw;
+}
+section#about h3 {
+  margin: 0;
+  margin-top: 6vh;
+  font-family: subt1;
+  font-size: 5vw;
+  color: #30475e;
+}
+section#about span {
+  display: inline-block;
+  font-family: "Ubuntu", sans-serif;
+  font-size: 1.5vw;
+  margin-bottom: 1vh;
+}
+section#about span:nth-child(2) {
+  margin: 5vh 0;
+}
+section#about span:nth-child(5) {
+  margin-top: 8vh;
+}
+section#about li {
+  list-style-type: square;
+  margin: 1.5vh 0;
+  font-family: "Ubuntu", sans-serif;
+  font-size: 1.2vw;
 }
 
 section#buyDetail {
@@ -273,9 +308,21 @@ section#buyDetail .buyContainer .buyFormContainer button {
   width: inherit;
   display: flex;
   flex-direction: row;
+  justify-content: space-around;
 }
 .shopContainer .orderContainer {
-  width: 25%;
+  width: 21%;
+}
+.shopContainer .orderContainer .orderText {
+  position: sticky;
+  top: 20vh;
+  padding: 1.5vh 1.5vw;
+  font-family: subt1;
+  font-size: 1.5vw;
+  border-top: #f05488 solid 0.8vh;
+  border-left: #f05488 solid 0.8vh;
+  border-right: #d2e430 solid 0.8vh;
+  border-bottom: #d2e430 solid 0.8vh;
 }
 .shopContainer .shopItems {
   height: 180vh;
@@ -286,6 +333,17 @@ section#buyDetail .buyContainer .buyFormContainer button {
   justify-content: space-around;
   justify-content: flex-start;
   align-content: flex-start;
+}
+.shopContainer .loader {
+  width: 75%;
+  height: 50%;
+  stroke: #32e978;
+  animation: loaderAnim 1s infinite linear;
+}
+@keyframes loaderAnim {
+  100% {
+    transform: rotate(-360deg);
+  }
 }
 
 .modalBuy {
@@ -488,6 +546,16 @@ section#buyDetail .buyContainer .buyFormContainer button {
   border-bottom: 0.4vh solid #d2e430;
   border-radius: 1vh;
   transition: color 1s, background-color 1s;
+}
+.detailContainer .loader {
+  stroke: #32e978;
+  animation: loaderAnim 1s infinite linear;
+  scale: 2;
+}
+@keyframes loaderAnim {
+  100% {
+    transform: rotate(-360deg);
+  }
 }
 
 #cartWidget {

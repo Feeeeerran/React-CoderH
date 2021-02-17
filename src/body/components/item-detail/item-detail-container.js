@@ -2,6 +2,7 @@ import React,{useEffect,useState} from 'react'
 import { useParams } from 'react-router-dom'
 
 import ItemDetail from './item-detail'
+import Loader from '../loader'
 import {firestore} from '../../../firebaseConfig'
 
 
@@ -32,7 +33,7 @@ export default function ItemDetailContainer() {
             {
                 detail!==0
                 ? <ItemDetail detail={detail}/>
-                : <div>Cargando</div>
+                : <Loader/>
             }
         </section>
     )

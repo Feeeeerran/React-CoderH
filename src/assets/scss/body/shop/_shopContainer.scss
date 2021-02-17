@@ -5,9 +5,22 @@
     width: inherit;
     display: flex;
     flex-direction: row;
+    justify-content: space-around;
 
     .orderContainer {
-        width: 25%;
+        width: 21%;
+        
+        .orderText {
+            position: sticky;
+            top:20vh;
+            // height: 25%;
+            padding:1.5vh 1.5vw;
+            font:{family:subt1;size:1.5vw;}
+            border-top:$color6 solid 0.8vh;
+            border-left:$color6 solid 0.8vh;
+            border-right:$color7 solid 0.8vh;
+            border-bottom:$color7 solid 0.8vh;
+        }
     }
 
     .shopItems {
@@ -22,4 +35,14 @@
 
     }
 
+    .loader {
+        width:75%;
+        height:50%;
+        stroke:$color3;
+        animation:loaderAnim 1s infinite linear;
+
+    }
+    @keyframes loaderAnim {
+        100% {transform:rotate(-360deg)}
+    }
 }
